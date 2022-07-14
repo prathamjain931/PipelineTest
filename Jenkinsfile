@@ -1,26 +1,24 @@
-pipeline {
+pipeline{
 	agent any
 	tools {
 		maven "Maven3.8.6"
-	
 	}
 	
-	stages {
-		stage('SCM CheckOut') {
+	stages{
+		stage('SCM CheckOut'){
 			git 'https://github.com/prathamjain931/PipelineTest'
 			}
-			}
-		stage('Compile-Package') {
-			steps {
+		}
+		stage('Compile-Package'){
+			steps{
 				sh "mvn -version"
 				sh "mvn clean install"
 				sh "mvn package"
 			}
 		}
 	}
-	
-	post {
-		always {
+	post{
+		always{
 			cleanWS()
 		}
 	}
