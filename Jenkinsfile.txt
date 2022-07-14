@@ -7,7 +7,7 @@ pipeline {
 	
 	stages {
 		stage('SCM CheckOut') {
-			git 'https://github.com/prathamjain931/PipelineTest/Maven Project'
+			git 'https://github.com/prathamjain931/PipelineTest'
 			}
 			}
 		stage('Compile-Package') {
